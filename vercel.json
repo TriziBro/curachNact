@@ -10,7 +10,7 @@
       "destination": "/pages/$1"
     },
     {
-      "source": "/pages/css/(.*).css",
+      "source": "/css/(.*)",
       "destination": "/pages/css/$1"
     }
   ],
