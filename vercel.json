@@ -6,11 +6,11 @@
       "destination": "/pages/foundation.html"
     },
     {
-      "source": "/(.*).html",
+      "source": "/pages/(.*).html",
       "destination": "/pages/$1"
     },
     {
-      "source": "/(.*).css",
+      "source": "/css/(.*)",
       "destination": "/pages/css/$1"
     }
   ],
