@@ -3,15 +3,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/pages/foundation.html"
+      "destination": "/foundation.html"
     },
     {
-      "source": "/pages/(.*).html",
-      "destination": "/pages/$1"
-    },
-    {
-      "source": "/css/(.*)",
-      "destination": "/pages/css/$1"
+      "source": "/(.*).html",
+      "destination": "/$1"
     }
   ],
   "headers": [
