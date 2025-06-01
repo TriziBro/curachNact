@@ -2,11 +2,11 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/foundation.html"
+      "source": "/pages/",
+      "destination": "/pages/foundation.html"
     },
     {
-      "source": "/(.*).html",
+      "source": "/pages/(.*).html",
       "destination": "/pages/$1"
     }
   ],
