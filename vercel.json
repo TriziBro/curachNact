@@ -12,7 +12,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/pages/css/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
