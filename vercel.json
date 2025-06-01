@@ -2,7 +2,7 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/pages/",
+      "source": "/",
       "destination": "/pages/foundation.html"
     },
     {
