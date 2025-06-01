@@ -1,0 +1,441 @@
+ .header {
+  position: relative; 
+  grid-area: header; 
+  padding-bottom: 0; 
+  margin-bottom: 0;
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  position: relative;
+  }
+ .header img {
+  width: 100%;
+  min-width: 100vw; /* Минимальная ширина = ширина экрана */
+  height: auto;
+  display: block;
+  object-fit: cover; /* Заполнение области без искажений */
+}
+.header-text {
+  font-family: Arial, sans-serif;
+ position: absolute;
+  left: 1%; /* Отступ в % от ширины */
+  bottom: 60%; /* Отступ в % от высоты */
+  transform: translate(0, 0); /* Фиксируем положение */
+  color: #ffffff;
+  z-index: 2;
+  padding: 5px 10px;
+  font-size: clamp(8px, 1vw, 14px); /* Адаптивный размер текста */
+  max-width: 90%;
+}
+ /* Общие стили для сетки */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  grid-template-columns: 250px 400px 250px;
+  grid-template-areas: "left center right";
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
+  max-width: 1000px;
+  height: 100vh; /* Фиксированная высота (или min-height) */
+  overflow: hidden
+}
+
+/* Стили для всех колонок */
+.column {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Скролл при переполнении */
+  min-height: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 2px;
+  min-height: 0; /* Важно для Flex в Grid */
+}
+
+/* Назначение областей */
+.left-column { grid-area: left;
+justify-content: flex-start;}
+.center-column { grid-area: center; }
+.right-column { grid-area: right; }
+
+.footer { 
+position: fixed; 
+bottom: 0;  
+left: 0;  
+width: 100%;  
+height: 50px;  
+}
+.footer img {
+  width: 100%;
+  min-width: 100vw; /* Минимальная ширина = ширина экрана */
+  height: auto;
+  display: block;
+  object-fit: cover; /* Заполнение области без искажений */
+}
+.footer-text {
+font-family: Arial, sans-serif;
+position: absolute;
+left: 1%; /* Отступ в % от ширины */
+bottom: 40%; /* Отступ в % от высоты */
+transform: translate(0, 0); /* Фиксируем положение */
+color: #ffffff;
+z-index: 2;
+padding: 5px 10px;
+font-size: clamp(8px, 1vw, 14px); /* Адаптивный размер текста */
+max-width: 90%; 
+word-spacing: 0.5em;
+}
+/* Стили для формы поиска */
+.search-form {
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание */
+  gap: 10px; /* Отступ между элементами */
+  margin: 20px 0; /* Отступ сверху/снизу */
+  width: 100%; /* Занимает всю ширину родителя */
+}
+
+.search-form input {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  flex-grow: 1; /* Растягивается на доступное пространство */
+  transform: none; /* Убираем трансформацию */
+  margin: 0; /* Убираем внешние отступы */
+}
+
+.search-form1 button {
+  padding: 2px 5px;
+  background-color: rgb(2, 128, 33);
+  color: #f8f6f5;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap; /* Текст не переносится */
+  transform: none; /* Убираем трансформацию */
+}
+.search-form2 button {
+  padding: 2px 5px;
+  background-color: rgb(0, 0, 0);
+  color: #f8f6f5;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap; /* Текст не переносится */
+  transform: none; /* Убираем трансформацию */
+}
+/* список левый */
+h4 {
+  margin: 0; /* Уменьшаем нижний отступ */
+  padding: 8px 12px 4px 0px;
+  border-bottom: 1px;
+  font-weight: normal;
+  font-family: 'Arial', sans-serif; 
+  margin-bottom: 10px;
+}
+.genome-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+li {
+   margin-top: -6px;
+  padding: 2px 0 8px 50px;
+  border-bottom: 1px;
+  background: url("../img/arrow.gif") no-repeat left center / 4px;
+  padding: 8px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  width: 150%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  position: relative; /* Для точного позиционирования */
+  min-height: 20px;
+}
+a {
+  color: #000000; 
+  text-decoration: none; 
+}
+
+.text-hw{
+color: rgb(208, 109, 2);
+text-decoration: none;
+font-family: Arial, sans-serif;
+font-weight: 700;
+}
+.text-hw1{
+color: rgb(208, 109, 2);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  position: relative;
+  top: -15px;
+  /* Стили для линии */
+  display: inline-block; /* Обязательно для работы padding */
+  padding-bottom: 5px; /* Увеличиваем отступ до линии (было 1px) */
+  border-bottom: 1px dashed #000;
+  width: 150%; /* Увеличиваем длину линии */
+  margin-right: -50%; /* Компенсируем увеличенную ширину */
+  box-sizing: border-box; 
+}
+.text24{
+font-weight: 300;
+font-size: 10px;
+position: relative;
+top: -35px;
+}
+.welcome{
+font-weight: 300;
+font-size: 13px;
+position: relative;
+top: -30px;
+}
+
+.post-actions {
+  display: flex;
+  gap: 100px;
+  margin-top: -10px;
+}
+.action-link {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #0e0d0d;
+  font-size: 12px;
+}
+
+.action-link:hover {
+  color: #2086cf;
+}
+
+.action-link img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+h1 {
+  margin: 0; /* Уменьшаем нижний отступ */
+  padding: 8px 12px 4px 0px;
+  border-bottom: 1px;
+  font-weight: normal;
+  font-family: 'Arial', sans-serif; 
+  margin-bottom: 10px;
+}
+h2 {
+  margin: 0; /* Уменьшаем нижний отступ */
+  padding: 8px 12px 4px 0px;
+  border-bottom: 1px;
+  font-weight: normal;
+  font-family: 'Arial', sans-serif; 
+  margin-bottom: 10px;
+}
+h3 {
+  margin: 0; /* Уменьшаем нижний отступ */
+  padding: 8px 12px 4px 0px;
+  border-bottom: 1px;
+  font-weight: normal;
+  font-family: 'Arial', sans-serif; 
+  margin-bottom: 10px;
+}
+.text-with-border {
+border: 3px dotted rgb(247, 138, 4);
+position: relative;
+top: -30px;
+}
+.quote {
+font-family: 'Arial', sans-serif;  
+font-weight: 700;
+position: relative;
+top: -10px;
+}
+
+.roster {
+  display: grid;
+  overflow: visible; /* Или hidden, если нужно обрезать выходящий текст */
+  width: 100%; /* Занимает всю ширину родительского контейнера */
+}
+.roster ul {
+  list-style-type: disc; /* Маркеры в виде точек */
+  list-style-position: inside; /* Маркеры внутри блока */
+  padding-left: 1em;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr; /* Одна колонка */
+  gap: 8px; /* Отступ между пунктами */
+}
+.roster li {
+  all: unset;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 2px 0 2px 2em; /* Увеличиваем отступ слева */
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  position: relative;
+  top: -20px;
+  margin-left: -15px; 
+  border-bottom: none !important;
+  line-height: 1;
+  width: auto; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  display: list-item; 
+}
+
+.paragraph {
+font-family: 'Arial', sans-serif;
+font-size: 12px;
+}
+
+/* 1. Метатег viewport (добавьте в HTML <head>) */
+/*
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+
+/* 2. Базовые мобильные стили */
+@media (max-width: 767px) {
+  /* Шапка */
+  .header {
+    width: 100%;
+    min-width: 100%;
+    position: static; /* Убираем фиксированное позиционирование */
+  }
+  
+  .header-text {
+    position: static;
+    transform: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #000; /* Если на мобильном белый текст не читается */
+    max-width: 100%;
+    bottom: auto;
+    left: auto;
+  }
+
+  /* Основная сетка */
+  .grid-container {
+    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-areas: 
+      "left"
+      "center"
+      "right";
+    height: auto;
+    overflow: visible;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  /* Колонки */
+  .column {
+    width: 100%;
+    border: none;
+    overflow: visible;
+    padding: 10px;
+  }
+
+  /* Левая колонка (меню) */
+  .left-column {
+    order: -1; /* Перемещаем вверх */
+  }
+
+  /* Списки */
+  .genome-list, .roster ul {
+    width: 100%;
+    padding-left: 15px;
+  }
+
+  li {
+    width: 100%;
+    padding: 8px 0 8px 25px;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+
+  /* Форма поиска */
+  .search-form {
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+
+  /* Подвал */
+  .footer {
+    position: static;
+    height: auto;
+  }
+
+  .footer-text {
+    position: static;
+    color: #000;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  /* Текстовые элементы */
+  .text-hw1, .text24, .welcome {
+    position: static;
+    width: 100%;
+    margin: 5px 0;
+    padding: 0;
+  }
+
+  .text-with-border {
+    top: 0;
+    margin: 10px 0;
+  }
+
+  /* Навигация поста */
+  .post-actions {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  /* Заголовки */
+  h1, h2, h3, h4 {
+    padding: 5px 0;
+    margin-bottom: 5px;
+  }
+}
+
+/* 3. Дополнительные улучшения для маленьких экранов */
+@media (max-width: 480px) {
+  .header-text {
+    font-size: 12px;
+  }
+  
+  .footer-text {
+    font-size: 10px;
+  }
+  
+  li {
+    font-size: 11px;
+    padding-left: 20px;
+  }
+}
+
+/* 4. Ландшафтная ориентация */
+@media (max-width: 767px) and (orientation: landscape) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "left center"
+      "right right";
+  }
+}
+

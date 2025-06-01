@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.header-text1 {
+  position: absolute;
+  font-family: "Arial";
+  top: 50%;
+  left: 50%;
+  transform: translate(-1250%, -350%);
+  color: white;
+  font-size: 15px;
+}
+.header-text2 {
+  position: absolute;
+  font-family: "Arial";
+  top: 50%;
+  left: 50%;
+  transform: translate(-410%, -650%);
+  color: white;
+  font-size: 8px;
+}
